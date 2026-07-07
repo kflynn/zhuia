@@ -1,4 +1,9 @@
 {% macro header(grid_size) %}
+{% if config.extra.banner %}
+<div id="banner">
+  <img src="{{ get_url(path=config.extra.banner) }}" alt="site banner" style="width:100%;display:block;">
+</div>
+{% endif %}
 <header id="header" class="section">
   <section class="container {{ grid_size }}">
     <nav class="navbar">
