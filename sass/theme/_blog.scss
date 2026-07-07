@@ -4,8 +4,20 @@
 
 /* Cards */
 .card {
-  box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 45px -9px rgba(0, 0, 0, 0.1);
   background: #fff;
+  position: relative;
+
+  .card-link-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  a:not(.card-link-overlay) {
+    position: relative;
+    z-index: 1;
+  }
 
   .post-title {
     font-weight: 600;
@@ -27,7 +39,7 @@
       background-color: white;
       margin: 1px;
       padding: 3px 5px;
-      font-family: "UniversNextPro-MediumExt",Arial,Helvetica,sans-serif;
+      font-family: "UniversNextPro-MediumExt", Arial, Helvetica, sans-serif;
       border: solid 1px #b3b3b3;
       line-height: normal;
       text-align: center;
@@ -48,14 +60,17 @@
   margin-bottom: 1rem;
   padding: 1rem;
 
-  span, a {
+  span,
+  a {
     padding: 0 0.5rem;
+
     &:first-child {
       padding-left: 0;
     }
   }
 
-  span, a {
+  span,
+  a {
     &:not(:first-child)::before {
       content: ">";
       padding-right: 1rem;
@@ -85,7 +100,7 @@
       -o-transition: all 0.2s ease-in;
       transition: all 0.2s ease-in;
 
-      & .card-image:first-child img{
+      & .card-image:first-child img {
         opacity: 1;
       }
     }
@@ -115,6 +130,7 @@ ul.pagination {
 
     li {
       border-bottom: 1px solid $border-color;
+
       &:last-child {
         border-bottom: 0;
       }
@@ -161,7 +177,7 @@ ul.pagination {
 }
 
 .paginator {
-  background: linear-gradient(225deg,#3085EE 0%,#1167D0 65%,#001D4A 100%);
+  background: linear-gradient(225deg, #3085EE 0%, #1167D0 65%, #001D4A 100%);
 
   & .page-item a {
     color: white;

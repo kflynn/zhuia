@@ -125,6 +125,9 @@
 
 {% macro card(page, full) %}
 <div class="card">
+  {%- if not full -%}
+  <a class="card-link-overlay" href="{{ page.permalink }}" aria-label="{{ page.title }}"></a>
+  {%- endif -%}
   {% if page.extra.cover_image %}
   {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
   {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
