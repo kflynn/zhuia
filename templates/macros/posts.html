@@ -66,13 +66,13 @@
 
 {% macro categories(categories) %}
     {%- for cat in categories -%}
-    <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
+    <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind='categories', name=cat ) }}">{{ cat }}</a>
     {%- endfor -%}
     {% endmacro categories %}
 
 {% macro tags(tags) %}
     {% for tag in tags -%}
-        <a class="label label-rounded tag" href="{{get_taxonomy_url(kind="tags", name=tag )}}">#{{ tag }}</a>
+        <a class="label label-rounded tag" href="{{get_taxonomy_url(kind='tags', name=tag )}}">#{{ tag }}</a>
     {% endfor -%}
 {% endmacro tags %}
 
